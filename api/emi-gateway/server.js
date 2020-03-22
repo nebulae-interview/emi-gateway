@@ -149,11 +149,11 @@ const { ApolloEngine } = require('apollo-engine');
 // set the ENGINE_API_KEY environment variable when you
 // run your program.
 const engineOps = {
+    apiKey: process.env.APOLLO_ENGINE_API_KEY,
     logging: {
         level: process.env.APOLLO_ENGINE_LOG_LEVEL // opts: DEBUG, INFO (default), WARN or ERROR.
     },
 };
-if (process.env.APOLLO_ENGINE_API_KEY) engineOps.apiKey = process.env.APOLLO_ENGINE_API_KEY;
 const engine = new ApolloEngine(engineOps);
 
 // Wrap the Express server and combined with WebSockets
